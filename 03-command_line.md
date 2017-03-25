@@ -19,7 +19,20 @@ Here's a list of items with which you should be familiar:
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do.  (Use the 8 items above and add a couple of your own.)  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+>> pwd
+>> mkdir mine
+>> rm -rf mine
+>> touch deletethis.py
+>> rm -r deletethis.py
+>> mv deletethis.py savethis.py
+>> ls -ld .?*
+>> cp movethis.py ../newfolder/movethis.py
+>> ps -ef | grep mpetukhova #list running programs/process under user 'mpetukhova'
+>> chmod #control access to directories
+
+ 
+
+
 
 ---
 
@@ -34,7 +47,13 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> > `ls` lists content of the current directory in short format
+    `ls -a` lists both hidden and unhidden files in short format
+    `ls -l` lists content with long format -shows permissions
+    `ls -lh` lists long format with readable file size
+    `ls -lah` lists hidden and unhidden files in long format with readable file size
+    `ls -t` lists content in ascending order by time and date
+    `ls -Glp` lists in long format, suppresses group info, shows file type
 
 ---
 
@@ -42,7 +61,8 @@ What do the following commands do:
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> > `ls -lrt` lists content in long format in descending order by time and date (most recent - first)
+    `ls -lSrh` lists content in long format in descending order by size file with readable file size 
 
 ---
 
@@ -50,7 +70,8 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
-
- 
+> > `xargs`  reads items from the standard input and executes specified command
+one or more times with any initial-arguments followed by items from standard input
+> > Example: find ./tmp -name deletethis -type f -print | xargs /bin/rm -f
+> > finds file(s) 'deletethis' in subdirectory tmp and deletes them (file names should be without spaces or new lines). 
 
