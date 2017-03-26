@@ -3,11 +3,17 @@
 
 
 def donuts(count):
+  if count < 10: print ('Number of donuts:', count)
+  else: print ('Number of donuts: many')
+  return
+
     """
     Given an int count of a number of donuts, return a string of the
     form 'Number of donuts: <count>', where <count> is the number
     passed in. However, if the count is 10 or more, then use the word
     'many' instead of the actual count.
+
+
 
     >>> donuts(4)
     'Number of donuts: 4'
@@ -22,6 +28,9 @@ def donuts(count):
 
 
 def both_ends(s):
+  if len(s) > 2: print(s[:2]+s[-2:])
+  return
+
     """
     Given a string s, return a string made of the first 2 and the last
     2 chars of the original string, so 'spring' yields 'spng'.
@@ -41,6 +50,9 @@ def both_ends(s):
 
 
 def fix_start(s):
+  if len(s) > 0: print(s[0]+s[1:].replace(s[0],"*"))
+  return
+
     """
     Given a string s, return a string where all occurences of its
     first char have been changed to '*', except do not change the
@@ -60,6 +72,9 @@ def fix_start(s):
 
 
 def mix_up(a, b):
+  if len(a)>1 and len(b)>1: print(b[:2]+a[2:], a[:2]+b[2:])
+  return
+
     """
     Given strings a and b, return a single string with a and b
     separated by a space '<a> <b>', except swap the first 2 chars of
@@ -78,6 +93,12 @@ def mix_up(a, b):
 
 
 def verbing(s):
+   if len(s)>2: 
+      if s[-3:]=='ing': print(s+'ly')
+      else: print (s+'ing')
+   else: print(s)
+   return
+   
     """
     Given a string, if its length is at least 3, add 'ing' to its end.
     Unless it already ends in 'ing', in which case add 'ly' instead.
@@ -95,6 +116,12 @@ def verbing(s):
 
 
 def not_bad(s):
+  if s.find('not')>0 and s.find('not')<s.find('bad'): 
+    r=s[:s.find('not')]+'good'+s[s.find('bad')+3:]
+    print(r)
+  else: print(s)
+  return
+
     """
     Given a string, find the first appearance of the substring 'not'
     and 'bad'. If the 'bad' follows the 'not', replace the whole
@@ -114,7 +141,16 @@ def not_bad(s):
     raise NotImplementedError
 
 
+from math import trunc
 def front_back(a, b):
+  if len(a) % 2==0: la=trunc(len(a)/2)
+  else: la=trunc(len(a)/2+0.5)
+  if len(b) % 2==0: lb=trunc(len(b)/2)
+  else: lb=trunc(len(b)/2+0.5)
+  x=a[:la]+b[:lb]+a[la:]+b[lb:]
+  print(la, lb, x)
+  return
+ 
     """
     Consider dividing a string into two halves. If the length is even,
     the front and back halves are the same length. If the length is
