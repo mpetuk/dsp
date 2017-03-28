@@ -6,22 +6,13 @@
 
 import csv
 
-f=open('./football.csv', 'rb')
-reader=csv.reader(f)
+reader=csv.DictReader(open('football.csv'))
 
-rownum = 0
+mindiff = None
+team_x = None
 for row in reader:
-   if rownum == 0:
-      header = row
-   else:
-      colnum = 0
-for col in row:
-   colnum += 1
-   rownum +=1
-
-
-print (row)
-
-
-f.close()
-
+   diff=abs(int(row['Goals']) - int(row['Goals Allowed']))
+   if mindiff is None or mindiff > diff:
+      mindiff = diff
+      team_x = row['Team']
+print ("The team with the smallest difference in 'for' and 'against' goals of", mindiff,"is", team_x)
