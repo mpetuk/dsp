@@ -84,14 +84,36 @@ Bayes' Theorem is an important tool in understanding what we really know, given 
 
 Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.  
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Response: The probability that Elvis was an identical twin is 45.5%. Using Bayes's Theorem: p(being identical twin | having a twin brother)=
+p(being identical twin)x p(having a twin brother| being identical twin)  
+
+
+Python code:
+import thinkstats2
+
+p_f=1/125
+p_i=1/300
+
+x=1/(1+p_f/p_i)
+
+print(x)
+
+pmf = thinkstats2.Pmf(dict(fraternal=(1-x), identical=x))
+print(pmf)
+pmf['fraternal'] *= 0.25
+pmf['identical'] *= 0.5
+pmf.Normalize()
+pmf.Print()
+
+
+
 
 ---
 
 ### Q6. Bayesian &amp; Frequentist Comparison  
 How do frequentist and Bayesian statistics compare?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Different approach to uncertainty. Confidence interval versus Credibility interval. Friquentist will treat uncertainty by saying that out of 100 experiments at least, say, 95 resulting confidence intervals will contain a true value of parameter. Bayesian statistician believe that data is fixed and parameter is drawnfrom a prior probability distribution and that posterior probability distribution contains 95% of probability.
 
 ---
 
@@ -121,4 +143,4 @@ Read Allen Downey's [Think Bayes](http://greenteapress.com/thinkbayes/) book.  I
 
 ## <a name="section-g"></a>7.  More Resources
 
-Some people enjoy video content such as Khan Academy's [Probability and Statistics](https://www.khanacademy.org/math/probability) or the much longer and more in-depth Harvard [Statistics 110](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo). You might also be interested in the book [Statistics Done Wrong](http://www.statisticsdonewrong.com/) or a very short [overview](http://schoolofdata.org/handbook/courses/the-math-you-need-to-start/) from School of Data.
+
